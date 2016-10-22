@@ -1,9 +1,6 @@
 <div>
-    <div class="jumbotron" style="padding-left: 4vw; padding-bottom: 20px; margin-bottom: 0px;">
+    <div class="jumbotron" style="padding-left: 4vw;">
         <h2>Register for Help</h2>
-    </div>
-    <div class="jumbotron container" style="padding-left: 4vw; padding-top: 10px; padding-bottom: 10px; width: 100%; margin-top: 0px; background-color: #FFFFFF;">
-        <h3>Need help? All we need is a phone number!</h3>
     </div>
 
     <div>
@@ -32,8 +29,8 @@
     </div>
 
     <div class="col-sm-4">
-        <button  ng-click="initialRegistrationController.register(1)" type="submit" class="btn btn-primary btn-large">
-            Register
+        <button type="submit" class="btn" ng-click="initialRegistrationController.returnHome()" style="color: #FFF;">
+            Home
         </button>
     </div>
 
@@ -49,8 +46,9 @@
     </div>
 
     <div class="col-sm-4">
-        <button type="submit" class="btn" ng-click="initialRegistrationController.returnHome()" style="color: #FFF;">
-            Home
+        <button  ng-click="initialRegistrationController.register(person)" type="submit" class="btn btn-primary btn-large">
+            Register
         </button>
     </div>
+
 </div>

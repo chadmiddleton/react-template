@@ -37,7 +37,7 @@
                     </div>
                     <div class="radio">
                         <label><input type="radio" ng-model="radValue" value="" name="optradio">Other:</label>
-                        <input class="form-control" id="other" ng-model="otherVal" placeholder="Enter help">
+                        <input class="form-control" id="other" ng-model="otherVal" placeholder="Enter help" style="margin-top: 5px;">
                     </div>
                 </div>
             </div>
@@ -45,25 +45,20 @@
     </div>
 
     <div class="col-sm-4">
-        <button  ng-click="initialRegistrationController.register(0)" type="submit" class="btn btn-primary btn-large">
-            Register
+        <button type="submit" class="btn" ng-click="initialRegistrationController.returnHome()" style="color: #FFF;">
+            Home
         </button>
     </div>
 
-    <div class="col-sm-2">
-        <button  ng-click="initialRegistrationController.goPrev()" type="submit" class="btn btn-primary btn-large">
-            Prev
-        </button>
-    </div>
-    <div class="col-sm-2">
+    <div class="col-sm-4">
         <button  ng-click="initialRegistrationController.goToName()" type="submit" class="btn btn-primary btn-large">
             Next
         </button>
     </div>
 
     <div class="col-sm-4">
-        <button type="submit" class="btn" ng-click="initialRegistrationController.returnHome()" style="color: #FFF;">
-            Home
+        <button  ng-click="initialRegistrationController.register(person)" type="submit" class="btn btn-primary btn-large">
+            Register
         </button>
     </div>
 </div>

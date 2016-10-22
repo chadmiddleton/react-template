@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './src/page/app';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import App from './src/page/app';
+//
+// ReactDOM.render(<App />, document.getElementById('app'))
 
-ReactDOM.render(<App />, document.getElementById('app'))
-
-angular.module('app', ['ngRoute']);
+// angular.module('app', ['ngRoute']);

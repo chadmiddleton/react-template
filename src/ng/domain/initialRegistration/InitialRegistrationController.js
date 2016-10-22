@@ -3,11 +3,29 @@ angular.module('app').controller('InitialRegistrationController',
                                 function($route, $scope, $location, NeedRegistrationService)
 {
     $scope.person = NeedRegistrationService.person;
-    $scope.radValue = 0;
-    $scope.otherVal = "";
+
+    switch ($scope.person.message) {
+        case "Housing Help":
+            $scope.radValue = "Housing Help";
+            $scope.otherVal = "";
+            break;
+        case "Medical Help":
+            $scope.radValue = "Medical Help";
+            $scope.otherVal = "";
+            break;
+        case "Mental Help":
+            $scope.radValue = "Mental Help";
+            $scope.otherVal = "";
+            break;
+        default:
+            $scope.otherVal = $scope.person.message;
+            $scope.radValue = 0;
+    }
+
     $scope.currentRace = "Prefer not to specify";
     $scope.currentEthnicity = "Prefer not to specify";
     $scope.currentGender = "Prefer not to specify";
+
     $scope.possibleEthOptions = [
         "Non-Hispanic/Non-Latino",
         "Hispanic/Latino",
@@ -45,69 +63,59 @@ angular.module('app').controller('InitialRegistrationController',
         "Transgender (Male to Female)": 2,
         "Transgender (Female to Male)": 3,
         "Dont' know": 8,
-        "Prefer not to specify": 99
+        "Prefer not to specify": 99,
     };
 
     this.returnHome = function() {
         $location.path('/home')
     };
 
-    this.register = function(option) {
-        switch (option) {
-            case 0:
-                this.addContact($scope.person);
-                break;
-            case 1:
-                this.addName($scope.person);
-                break;
-            default:
-                this.addPersonal();
-        }
+    this.register = function(person) {
+        NeedRegistrationService.person = person;
+        $scope.person = NeedRegistrationService.addUser(person);
+        console.log(person);
         console.log(NeedRegistrationService.person);
-        NeedRegistrationService.person = {};
     };
 
-    this.addContact = function(person) {
-        NeedRegistrationService.person.phone = person.phone;
-        NeedRegistrationService.person.location = person.location;
-        if($scope.radValue == "") {
-            $scope.radValue = $scope.otherVal;
-        }
-        NeedRegistrationService.person.message = $scope.radValue;
-    };
-
-    this.addName = function(person) {
-        NeedRegistrationService.person.firstname = person.firstname;
-        NeedRegistrationService.person.midname = person.midname;
-        NeedRegistrationService.person.lastname = person.lastname;
-    };
-
-    this.addPersonal = function() {
-        NeedRegistrationService.person.gender = mapvals[$scope.currentGender];
-        NeedRegistrationService.person.ethnicity = mapvals[$scope.currentEthnicity];
-        NeedRegistrationService.person.race = mapvals[$scope.currentRace];
-    };
+    this.goPrev = function() {
+        NeedRegistrationService.person = $scope.person;
+        $location.path(NeedRegistrationService.previous);
+        NeedRegistrationService.previous = "help/register/";
+    }
 
     this.goToName = function() {
-        this.addContact($scope.person);
+        if($scope.radValue == "")
+            $scope.radValue = $scope.otherVal;
+        NeedRegistrationService.person.message = $scope.radValue;
+
+        NeedRegistrationService.person = $scope.person;
+        NeedRegistrationService.previous = "help/register/";
         $location.path("help/register-name/");
     };
 
     this.goToPersonal = function() {
-        this.addName($scope.person);
+        NeedRegistrationService.person = $scope.person;
+        NeedRegistrationService.previous = "help/register-name/";
         $location.path("help/register-personal/");
     };
 
     $scope.selectEthnicityOption = function(ethnicity) {
         $scope.currentEthnicity = ethnicity;
+        NeedRegistrationService.person.ethnicity = mapvals[ethnicity];
+        $scope.person.ethnicity = mapvals[ethnicity];
     };
 
     $scope.selectRaceOption = function(race) {
         $scope.currentRace = race;
+        NeedRegistrationService.person.race = mapvals[race];
+        $scope.person.race = mapvals[race];
+
     };
 
     $scope.selectGenderOption = function(gender) {
         $scope.currentGender = gender;
+        NeedRegistrationService.person.gender = mapvals[gender];
+        $scope.person.gender = mapvals[gender];
     }
 
 }]);
