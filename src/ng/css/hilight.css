@@ -1,0 +1,17 @@
+.hilightblue:hover, a.hilightblue:hover {
+    color: var(--light);
+    background-color: var(--blue);
+    border-color: var(--blue);
+}
+
+.hilightpurple:hover, a.hilightpurple:hover {
+    color: var(--light);
+    background-color: var(--purple);
+    border-color: var(--purple);
+}
+
+.hilightgreen:hover, a.hilightgreen:hover {
+    color: var(--light);
+    background-color: var(--leafgreen);
+    border-color: var(--leafgreen);
+}
