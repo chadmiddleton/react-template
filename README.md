@@ -2,4 +2,9 @@
 
 Basic set up for a react project.
 
-Hello World! on localhost:3333
+#Run commands
+
+npm install
+npm start
+
+"Hello World!" on localhost:3333
