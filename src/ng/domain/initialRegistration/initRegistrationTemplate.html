@@ -1,0 +1,77 @@
+<div class="container col-md-8" style="padding-right: 0px; padding-left: 0px; padding-bottom: 15px; height: 100%">
+
+    <div class="jumbotron" style="padding-left: 4vw;">
+        <h2>Register for Help</h2>
+    </div>
+
+    <div>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="name" class="col-sm-3 col-sm-offset-1 control-label">Name</label>
+                <div class="col-sm-7">
+                    <input class="form-control" id="name">{{person.name}}</input>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone" class="col-sm-3 col-sm-offset-1 control-label">Phone #</label>
+                <div class="col-sm-7">
+                    <input class="form-control" type="tel" id="phone">{{person.phone}}</input>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="offset" class="col-sm-3 col-sm-offset-1 control-label">Location</label>
+                <div class="col-sm-7">
+                    <input class="form-control" id="offset">{{person.location}}</input>
+                </div>
+            </div>
+
+            <div class="radio">
+                <label><input type="radio" name="optradio">Housing</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio">Medical</label>
+            </div>
+            <div class="radio disabled">
+                <label><input type="radio" name="optradio">Mental</label>
+            </div>
+        </form>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="col-sm-12" id="multiflight" style="padding-left: 2vw;">
+        <form class="form-horizontal" style="padding-right: 3vw;">
+            <div class="form-group">
+                <label for="title" class="control-label">Total Flight Time</label>
+                <div >
+                    <label class="form-control" id="title">{{flightTime}} hour(s)</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="userHits" class="control-label">Total Layover Time</label>
+                <div>
+                    <label class="form-control" id="userHits">{{layoverTime}} hour(s)</label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-sm-6" id="bookdiv">
+        <button  ng-click="flightDetailController.book()" type="submit" class="btn btn-primary btn-large">
+            <i class="fa fa-plane" aria-hidden="true"></i>  Book this flight!
+        </button>
+    </div>
+
+    <div class="col-sm-6">
+        <button type="submit" class="btn" ng-click="returnHome()" style="width: 146px; color: #FFF;">
+            <i class="fa fa-home" aria-hidden="true" style="color: #FFF;"></i> Home
+        </button>
+    </div>
+</div>
+
+<div class="col-md-7" style="padding-right: 0px; padding-left: 0px;">
+    <div id="map"></div>
+</div>
