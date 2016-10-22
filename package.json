@@ -21,8 +21,10 @@
     "webpack-dev-server": ""
   },
   "devDependencies": {
+    "angular": "^1.5.8",
     "babel-core": "^6.17.0",
-    "redux-devtools": "^3.3.1"
+    "redux-devtools": "^3.3.1",
+    "webpack": "^1.13.2"
   },
   "description": ""
 }

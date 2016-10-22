@@ -1,0 +1,31 @@
+:root {
+    --blue: #4466FF;
+    --backblue: #DDEEFF;
+    --lightblue: #CCCCFF;
+    --darkblue: #223366;
+    --skyblue: #88AADD;
+    --teal: #88DDFF;
+    --white: #FFFFFF;
+    --lightgray: #EEEEEE;
+    --gray: #AAAAAA;
+    --darkgray: #666666;
+    --black: #000000;
+    --light: #EEEEFF;
+    --mint: #CCFFCC;
+    --brightgreen: #99FF99;
+    --green: #66EE66;
+    --leafgreen: #33AA33;
+    --darkgreen: #115511;
+    --backpurple: #FFEEFF;
+    --brightpurple: #CC99FF;
+    --lightpurple: #AA77FF;
+    --purple: #844DEF;
+    --darkpurple: #6622AA;
+    --brightred: #FF9999;
+    --salmon: #EE6666;
+    --red: #DD3333;
+    --darkred: #991111;
+    --mid: #243599;
+    --dark: #110033;
+    --backcolor: #66AAFF;
+}
