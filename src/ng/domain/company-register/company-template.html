@@ -1,18 +1,73 @@
 <div class="container-fluid">
-    <div class="page-header">New CoC Member
-        <div class="pull-right">
-            <button class="btn btn-primary" type="submit">Submit</button>
-        </div>
+    <div class="page-header">
+        <h1>New CoC Member
+            <div class="pull-right">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </h1>
     </div>
-    <div class="panel">
-        <div class="panel-header">
+    <div class="panel panel-default">
+        <div class="panel-heading">
             <div class="panel-title">Agency Information</div>
         </div>
         <div class="panel-body">
             <form>
                 <div class="form-group">
-                    <label for="agencyName">Name:</label>
-                    <input id="agencyName" type="text" class="form-control" placeholder="Agency name"/>
+                    <div class="row">
+                        <div class="col-xs-1 col-sm-4">
+                            <label for="agencyName">Name:</label>
+                            <input id="agencyName" type="text" class="form-control" placeholder="Name"/>
+                        </div>
+                        <div class="col-xs-1 col-sm-8">
+                            <label for="agencyAddress">Address:</label>
+                            <input id="agencyAddress" type="text" class="form-control" placeholder="Address"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-1 col-sm-4">
+                            <label for="agencyPhone">Phone #:</label>
+                            <input id="agencyPhone" type="text" class="form-control" placeholder="Phone #"/>
+                        </div>
+                        <div class="col-xs-1 col-sm-8">
+                            <label for="agencyWebSite">Web Address:</label>
+                            <input id="agencywebsite" type="text" class="form-control" placeholder="Website"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-1 col-sm-4">
+                            <label for="nonProfitStatus">501c3 Status</label>
+                            <input type="checkbox">Yes
+                            <input type="checkbox">No
+                            <input type="checkbox">Pending
+                        </div>
+                        <div class="col-xs-1 col-sm-4">
+                            <label for="governmentEntity">Government Entity</label>
+                            <input type="checkbox">Yes
+                            <input type="checkbox">No
+                        </div>
+                        <div class="col-xs-1 col-sm-4">
+                            <label for="faithBased">Faith Based</label>
+                            <input type="checkbox">Yes
+                            <input type="checkbox">No
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-1 col-sm-4">
+                            <label for="agencyExecName">Executive Dir. Name</label>
+                            <input id="agencyExecName" type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="col-xs-1 col-sm-4">
+                            <label for="agencyExecNumber">Executive Dir. Number</label>
+                            <input id="agencyExecNumber" type="text" class="form-control" placeholder="Phone number">
+                        </div>
+                        <div class="col-xs-1 col-sm-4">
+                            <label for="agencyExecEmail">Executive Dir. Email</label>
+                            <input id="agencyExecEmail" type="email" class="form-control" placeholder="E-mail address">
+                        </div>
+                    </div>
+                    <div class="row">
+
+                    </div>
                 </div>
             </form>
         </div>
