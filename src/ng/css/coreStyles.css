@@ -29,3 +29,7 @@
     --dark: #110033;
     --backcolor: #66AAFF;
 }
+
+body {
+    background-color: var(--backcolor);
+}
