@@ -15,6 +15,10 @@ angular.module('app').config(['$routeProvider', 'baseRoute', function config($ro
             templateUrl: baseRoute + "initialRegistration/registerPersonal.html",
             controller: 'InitialRegistrationController',
             controllerAs: 'initialRegistrationController'
+        }).when('/service/register', {
+            templateUrl: baseRoute + "company-register/company-template.html",
+            controller: 'company-register-controller',
+            controllerAs: 'companyRegisterController'
         }).otherwise('/home');
     }
 ]);
