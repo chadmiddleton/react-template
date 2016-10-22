@@ -6,68 +6,101 @@
 
     <div>
         <form class="form-horizontal">
+            <!-- NAME -->
             <div class="form-group">
-                <label for="name" class="col-sm-3 col-sm-offset-1 control-label">Name</label>
+                <label for="firstname" class="col-sm-3 col-sm-offset-1 control-label">First Name</label>
                 <div class="col-sm-7">
-                    <input class="form-control" id="name">{{person.name}}</input>
+                    <input class="form-control" id="firstname" ng-model="person.firstname" placeholder="Enter first name">
                 </div>
             </div>
 
+            <div class="form-group">
+                <label for="midname" class="col-sm-3 col-sm-offset-1 control-label">Middle Name</label>
+                <div class="col-sm-7">
+                    <input class="form-control" id="midname" ng-model="person.midname" placeholder="Enter middle name">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="lastname" class="col-sm-3 col-sm-offset-1 control-label">Last Name</label>
+                <div class="col-sm-7">
+                    <input class="form-control" id="lastname" ng-model="person.lastname" placeholder="Enter last name">
+                </div>
+            </div>
+
+            <!--  CONTACT INFO -->
             <div class="form-group">
                 <label for="phone" class="col-sm-3 col-sm-offset-1 control-label">Phone #</label>
                 <div class="col-sm-7">
-                    <input class="form-control" type="tel" id="phone">{{person.phone}}</input>
+                    <input class="form-control" type="tel" id="phone" ng-model="person.phone" placeholder="Enter phone (required)">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="offset" class="col-sm-3 col-sm-offset-1 control-label">Location</label>
+                <label for="location" class="col-sm-3 col-sm-offset-1 control-label">Location</label>
                 <div class="col-sm-7">
-                    <input class="form-control" id="offset">{{person.location}}</input>
+                    <input class="form-control" id="location" ng-model="person.location" placeholder="Enter location">
                 </div>
             </div>
 
-            <div class="radio">
-                <label><input type="radio" name="optradio">Housing</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio">Medical</label>
-            </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio">Mental</label>
-            </div>
-        </form>
-    </div>
-
-    <div class="spacer"></div>
-
-    <div class="col-sm-12" id="multiflight" style="padding-left: 2vw;">
-        <form class="form-horizontal" style="padding-right: 3vw;">
+            <!-- PERSONAL INFO -->
             <div class="form-group">
-                <label for="title" class="control-label">Total Flight Time</label>
-                <div >
-                    <label class="form-control" id="title">{{flightTime}} hour(s)</label>
+                <label for="ethnicity" class="col-sm-3 col-sm-offset-1 control-label">{{person.ethnicity}}</label>
+                <div class="col-sm-7" id="ethnicity">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button"
+                                id="ethnicityMenu" data-toggle="dropdown" style="width: 146px;">
+                            {{currentEthnicity}} <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="option in possibleEthOptions"><a style="cursor: pointer;"
+                                ng-click="selectOption(option)">{{option}}</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="userHits" class="control-label">Total Layover Time</label>
-                <div>
-                    <label class="form-control" id="userHits">{{layoverTime}} hour(s)</label>
+                <label for="gender" class="col-sm-3 col-sm-offset-1 control-label">Gender: </label>
+                <div id="gender" class="container col-sm-7">
+                    <div class="radio">
+                        <label><input type="radio" ng-model="gender" value="1" name="genradio">Male</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" ng-model="gender" value="2" name="genradio">Female</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" ng-model="gender" value="3" name="genradio">Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="helpneeded" class="col-sm-3 col-sm-offset-1 control-label">Help Needed:</label>
+                <div id="helpneeded" class="container col-sm-7">
+                    <div class="radio">
+                        <label><input type="radio" ng-model="radValue" value="1" name="optradio">Housing</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" ng-model="radValue" value="2" name="optradio">Medical</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" ng-model="radValue" value="4" name="optradio">Mental</label>
+                    </div>
                 </div>
             </div>
         </form>
     </div>
 
     <div class="col-sm-6" id="bookdiv">
-        <button  ng-click="flightDetailController.book()" type="submit" class="btn btn-primary btn-large">
-            <i class="fa fa-plane" aria-hidden="true"></i>  Book this flight!
+        <button  ng-click="initialRegistrationController.register(person)" type="submit" class="btn btn-primary btn-large">
+            Register
         </button>
     </div>
 
     <div class="col-sm-6">
-        <button type="submit" class="btn" ng-click="returnHome()" style="width: 146px; color: #FFF;">
-            <i class="fa fa-home" aria-hidden="true" style="color: #FFF;"></i> Home
+        <button type="submit" class="btn" ng-click="initialRegistrationController.returnHome()" style="width: 146px; color: #FFF;">
+            Home
         </button>
     </div>
 </div>

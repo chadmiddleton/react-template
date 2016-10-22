@@ -27,9 +27,8 @@
     --darkred: #991111;
     --mid: #243599;
     --dark: #110033;
-    --backcolor: #66AAFF;
 }
 
 body {
-    background-color: var(--backcolor);
+    background-color: var(--leafgreen);
 }
