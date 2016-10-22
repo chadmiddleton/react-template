@@ -1,33 +1,13 @@
-<div class="container col-md-8" style="padding-right: 0px; padding-left: 0px; padding-bottom: 15px; height: 100%">
-
-    <div class="jumbotron" style="padding-left: 4vw;">
+<div>
+    <div class="jumbotron" style="padding-left: 4vw; padding-bottom: 20px; margin-bottom: 0px;">
         <h2>Register for Help</h2>
+    </div>
+    <div class="jumbotron container" style="padding-left: 4vw; padding-top: 10px; padding-bottom: 10px; width: 100%; margin-top: 0px; background-color: #FFFFFF;">
+        <h3>Need help? All we need is a phone number!</h3>
     </div>
 
     <div>
         <form class="form-horizontal">
-            <!-- NAME -->
-            <div class="form-group">
-                <label for="firstname" class="col-sm-3 col-sm-offset-1 control-label">First Name</label>
-                <div class="col-sm-7">
-                    <input class="form-control" id="firstname" ng-model="person.firstname" placeholder="Enter first name">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="midname" class="col-sm-3 col-sm-offset-1 control-label">Middle Name</label>
-                <div class="col-sm-7">
-                    <input class="form-control" id="midname" ng-model="person.midname" placeholder="Enter middle name">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="lastname" class="col-sm-3 col-sm-offset-1 control-label">Last Name</label>
-                <div class="col-sm-7">
-                    <input class="form-control" id="lastname" ng-model="person.lastname" placeholder="Enter last name">
-                </div>
-            </div>
-
             <!--  CONTACT INFO -->
             <div class="form-group">
                 <label for="phone" class="col-sm-3 col-sm-offset-1 control-label">Phone #</label>
@@ -43,68 +23,47 @@
                 </div>
             </div>
 
-            <!-- PERSONAL INFO -->
-            <div class="form-group">
-                <label for="ethnicity" class="col-sm-3 col-sm-offset-1 control-label">{{person.ethnicity}}</label>
-                <div class="col-sm-7" id="ethnicity">
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button"
-                                id="ethnicityMenu" data-toggle="dropdown" style="width: 146px;">
-                            {{currentEthnicity}} <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="option in possibleEthOptions"><a style="cursor: pointer;"
-                                ng-click="selectOption(option)">{{option}}</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="gender" class="col-sm-3 col-sm-offset-1 control-label">Gender: </label>
-                <div id="gender" class="container col-sm-7">
-                    <div class="radio">
-                        <label><input type="radio" ng-model="gender" value="1" name="genradio">Male</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" ng-model="gender" value="2" name="genradio">Female</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" ng-model="gender" value="3" name="genradio">Other</label>
-                    </div>
-                </div>
-            </div>
-
             <div class="form-group">
                 <label for="helpneeded" class="col-sm-3 col-sm-offset-1 control-label">Help Needed:</label>
                 <div id="helpneeded" class="container col-sm-7">
                     <div class="radio">
-                        <label><input type="radio" ng-model="radValue" value="1" name="optradio">Housing</label>
+                        <label><input type="radio" ng-model="radValue" value="Housing Help" name="optradio">Housing</label>
                     </div>
                     <div class="radio">
-                        <label><input type="radio" ng-model="radValue" value="2" name="optradio">Medical</label>
+                        <label><input type="radio" ng-model="radValue" value="Medical Help" name="optradio">Medical</label>
                     </div>
                     <div class="radio">
-                        <label><input type="radio" ng-model="radValue" value="4" name="optradio">Mental</label>
+                        <label><input type="radio" ng-model="radValue" value="Mental Help" name="optradio">Mental</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" ng-model="radValue" value="" name="optradio">Other:</label>
+                        <input class="form-control" id="other" ng-model="otherVal" placeholder="Enter help">
                     </div>
                 </div>
             </div>
         </form>
     </div>
 
-    <div class="col-sm-6" id="bookdiv">
-        <button  ng-click="initialRegistrationController.register(person)" type="submit" class="btn btn-primary btn-large">
+    <div class="col-sm-4">
+        <button  ng-click="initialRegistrationController.register(0)" type="submit" class="btn btn-primary btn-large">
             Register
         </button>
     </div>
 
-    <div class="col-sm-6">
-        <button type="submit" class="btn" ng-click="initialRegistrationController.returnHome()" style="width: 146px; color: #FFF;">
+    <div class="col-sm-2">
+        <button  ng-click="initialRegistrationController.goPrev()" type="submit" class="btn btn-primary btn-large">
+            Prev
+        </button>
+    </div>
+    <div class="col-sm-2">
+        <button  ng-click="initialRegistrationController.goToName()" type="submit" class="btn btn-primary btn-large">
+            Next
+        </button>
+    </div>
+
+    <div class="col-sm-4">
+        <button type="submit" class="btn" ng-click="initialRegistrationController.returnHome()" style="color: #FFF;">
             Home
         </button>
     </div>
-</div>
-
-<div class="col-md-7" style="padding-right: 0px; padding-left: 0px;">
-    <div id="map"></div>
 </div>
