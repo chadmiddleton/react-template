@@ -12,15 +12,19 @@
                 <th>Phone #</th>
                 <th>Message</th>
                 <th>Date</th>
+                <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="person in clientList" ng-click="clientListController.updateClient(person)" style="cursor: pointer;">
+            <tr ng-repeat="person in clientList">
                 <th scope="row">{{person.num}}</th>
                 <td>{{person.firstname}} {{person.lastname}}</td>
                 <td>{{person.phoneNumbers[0]}}</td>
                 <td>{{person.message}}</td>
                 <td>{{person.dateUpdated}}</td>
+                <td><button ng-click="clientListController.updateClient(person)">Edit</button></td>
+                <td><button ng-click="clientListController.viewClient(person)" style="cursor: pointer;">View</button></td>
             </tr>
         </table>
     </div>

@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="page-header">
+        <h1>Edit {{provider.name}}</h1>
+    </div>
+    <div class="panel">
+        <div class="panel-body">
+            <div class="col-sm-4">
+                <h3>Taken Beds</h3>
+                <div class="form-group">
+                    <input class="form-control" type="tel" ng-model="provider.inUse[1].amount" placeholder="Enter phone (required)">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h3>Total Beds for Offer</h3>
+                <div class="form-group">
+                    <input class="form-control" type="tel" ng-model="provider.offer[1].amount" placeholder="Enter phone (required)">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h3>Available Beds</h3>
+                <div class="form-group">
+                    <label class="form-control">{{provider.available[1].amount}}</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <button  ng-click="providerUpdateController.update(provider)" type="submit" class="btn btn-primary btn-large" style="margin-top: 20px;">
+                Update!
+            </button>
+        </div>
+    </div>
+</div>

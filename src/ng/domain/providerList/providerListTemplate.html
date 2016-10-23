@@ -29,7 +29,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="provider in providerList">
+            <tr ng-repeat="provider in providerList" ng-click="providerListController.updateProvider(provider)" style="cursor: pointer;">
                 <th scope="row"></th>
                 <td>{{provider.name}}</td>
                 <td>{{provider.address.street}}</td>
