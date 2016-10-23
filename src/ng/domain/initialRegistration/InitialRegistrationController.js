@@ -46,24 +46,24 @@ angular.module('app').controller('InitialRegistrationController',
         "Male",
         "Transgender (Male to Female)",
         "Transgender (Female to Male)",
-        "Don't Know",
+        "Don't now",
         "Prefer not to specify"
     ];
 
     var mapvals = {
-        "Non-Hispanic/Non-Latino": 0,
-        "Hispanic/Latino": 1,
-        "American Indian/Alaskan Native": 1,
-        "Asian": 2,
-        "Black or African American": 3,
-        "Native Hawaiian or Other Pacific Islander": 4,
-        "White": 5,
-        "Female": 0,
-        "Male": 1,
-        "Transgender (Male to Female)": 2,
-        "Transgender (Female to Male)": 3,
-        "Dont' know": 8,
-        "Prefer not to specify": 99,
+        "Non-Hispanic/Non-Latino": "Non_Hispanic_Non_Latino",
+        "Hispanic/Latino": "Hispanic_Latino",
+        "American Indian/Alaskan Native": "AmIndAKNative",
+        "Asian": "Asian",
+        "Black or African American": "Black",
+        "Native Hawaiian or Other Pacific Islander": "NativeHIOtherPacific",
+        "White": "White",
+        "Female": "Female",
+        "Male": "Male",
+        "Transgender (Male to Female)": "Transgender_male_to_female",
+        "Transgender (Female to Male)": "Transgender_female_to_male",
+        "Dont' know": "Client_Does_Not_Know",
+        "Prefer not to specify": "Client_Refused",
     };
 
     this.returnHome = function() {
@@ -73,7 +73,6 @@ angular.module('app').controller('InitialRegistrationController',
     this.register = function(person) {
         NeedRegistrationService.person = person;
         $scope.person = NeedRegistrationService.addUser(person);
-        console.log(person);
         console.log(NeedRegistrationService.person);
     };
 
