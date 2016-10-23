@@ -3,10 +3,6 @@ angular.module('app').controller('providerListController',
         function($route, $scope, $location, providerList, providerService)
 {
         $scope.providerList = providerList.data;
-        $scope.queryOptions = [
-            "beds",
-            "units"
-        ]
         
         $scope.getProviderBy = function(service){
                 providerService.getProvidersByService(service).then(function(result) {
@@ -14,4 +10,9 @@ angular.module('app').controller('providerListController',
                         $scope.providerList = result.data;
                 })
         };
+
+        this.updateProvider = function(provider) {
+                providerService.provider = provider;
+                $location.path('provider/update/');
+        }
 }]);
