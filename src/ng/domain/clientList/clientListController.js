@@ -4,10 +4,11 @@ angular.module('app').controller('clientListController',
 {
     $scope.clientList = clientList.data;
 
-    for (var i = 0; i < clientList.length; i++) {
+    for (var i = 0; i < $scope.clientList.length; i++) {
         var d = new Date(0);
-        d.setUTCSeconds(clientList[i].dateUpdated);
-        clientList[i].dateUpdated = d;
+        d.setUTCSeconds($scope.clientList[i].dateUpdated/1000);
+        if ($scope.clientList[i].dateUpdated/1000 > 1) {
+            $scope.clientList[i].dateUpdated = d.toDateString();
+        }
     }
-
 }]);
