@@ -26,7 +26,12 @@ angular.module('app').config(['$routeProvider', 'baseRoute', function config($ro
     }).when('/help/list', {
         templateUrl: baseRoute + "clientList/clientListTemplate.html",
         controller: 'clientListController',
-        controllerAs: 'clientListController'
+        controllerAs: 'clientListController',
+        resolve: {
+            clientList: function(ClientService){
+                return ClientService.getClients();
+            }
+        }
     }).otherwise('/home');
 }
 ]);
