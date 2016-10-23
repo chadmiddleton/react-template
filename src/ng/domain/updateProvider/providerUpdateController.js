@@ -29,7 +29,16 @@ angular.module('app').controller('providerUpdateController',
     this.interval = setInterval(this.updateAmounts, 1000);
 
     this.update = function(provider) {
-        this.updateAmounts();
+        $scope.provider.available[1].amount = $scope.provider.offer[1].amount - $scope.provider.inUse[1].amount;
+        if ($scope.provider.available[1].amount < 0) {
+            $scope.provider.offer[1].amount = $scope.data.offer;
+            $scope.provider.inUse[1].amount = $scope.data.inUse;
+            $scope.provider.available[1].amount = $scope.data.available;
+        } else {
+            $scope.data.offer = $scope.provider.offer[1].amount;
+            $scope.data.inUse = $scope.provider.inUse[1].amount
+            $scope.data.available = $scope.provider.available[1].amount;
+        }
         providerService.update(provider).then(function(result) {
             providerService.provider = result.data;
             console.log(result.data);

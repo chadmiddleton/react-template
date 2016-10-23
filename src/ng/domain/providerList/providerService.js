@@ -8,7 +8,7 @@ angular.module('app').service('providerService', ['$http', function($http) {
         return $http.put(url, provider).then(function(result) {
             return result;
         });
-    }
+    };
 
     this.getProviders = function() {
         return $http.get(url).then(function(result) {
