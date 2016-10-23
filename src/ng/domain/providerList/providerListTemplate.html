@@ -28,7 +28,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="provider in providerList">
+            <tr ng-repeat="provider in providerList" ng-click="providerListController.updateProvider(provider)" style="cursor: pointer;">
                 <th scope="row"></th>
                 <td>{{provider.name}}</td>
                 <td>{{provider.address.street}}</td>
@@ -38,5 +38,13 @@
                 <td>{{provider.available[1].amount}}</td>
             </tr>
         </table>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button type="submit" class="btn" ng-click="providerListController.returnHome()"
+                    style="color: #FFF;">
+                Home
+            </button>
+        </div>
     </div>
 </div>

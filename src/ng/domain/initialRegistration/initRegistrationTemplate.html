@@ -1,81 +1,87 @@
 <div class="container-fluid">
-    <div class="container page-header">
-        <div class="col-sm-8">
-            <h2>Register for Help</h2>
-        </div>
-        <div class="col-sm-4">
-            <button  ng-click="initialRegistrationController.register(person)" type="submit" class="btn btn-primary btn-large" style="margin-top: 20px;">
-                Register
-            </button>
-        </div>
+    <div class="page-header">
+        <h1>Register for Help
+            <div class="pull-right">
+                <button ng-click="initialRegistrationController.register(person)" type="submit"
+                        class="btn btn-primary btn-lg">
+                    Register
+                </button>
+            </div>
+        </h1>
     </div>
-    <div class="jumbotron container" style="padding-top: 10px; padding-bottom: 10px; width: 100%; margin-top: 0px; margin-bottom: 0px; background-color: #FFFFFF;
-                                            border-bottom-left-radius : 0px; border-bottom-right-radius: 0px;">
-        <div class="col-sm-4">
-            <button type="submit" class="btn" ng-click="initialRegistrationController.returnHome()" style="color: #FFF;">
-                Home
-            </button>
+    <div class="panel">
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <!--  CONTACT INFO -->
+                <div class="form-group">
+                    <label for="phone" class="col-sm-3 col-sm-offset-1 control-label">Phone #</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="tel" id="phone" ng-model="person.phone"
+                               placeholder="Enter phone (required)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="street" class="col-sm-3 col-sm-offset-1 control-label">Street</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" id="street" ng-model="person.address.street"
+                               placeholder="Enter Street">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="city" class="col-sm-3 col-sm-offset-1 control-label">City</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" id="city" ng-model="person.address.city" placeholder="Enter City">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="state" class="col-sm-3 col-sm-offset-1 control-label">State</label>
+                    <div class="col-sm-2">
+                        <input class="form-control" id="state" ng-model="person.address.state"
+                               placeholder="Enter State">
+                    </div>
+                    <label for="zip" class="col-sm-2 control-label">Zip Code</label>
+                    <div class="col-sm-3">
+                        <input class="form-control" id="zip" ng-model="person.address.zipCode"
+                               placeholder="Enter Zip Code">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="helpneeded" class="col-sm-3 col-sm-offset-1 control-label">Help Needed:</label>
+                    <div id="helpneeded" class="container col-sm-7">
+                        <div class="radio">
+                            <label><input type="radio" ng-model="radValue" value="Housing Help"
+                                          name="optradio">Housing</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" ng-model="radValue" value="Medical Help"
+                                          name="optradio">Medical</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" ng-model="radValue" value="Mental Help"
+                                          name="optradio">Mental</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" ng-model="radValue" value="" name="optradio">Other:</label>
+                            <input class="form-control" id="other" ng-model="otherVal" placeholder="Enter help"
+                                   style="margin-top: 5px;">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn" ng-click="initialRegistrationController.returnHome()"
+                            style="color: #FFF;">
+                        Home
+                    </button>
+                    <button ng-click="initialRegistrationController.goToName()" type="submit"
+                            class="btn btn-success pull-right">
+                        Next
+                    </button>
+                </div>
+            </div>
         </div>
-
-        <div class="col-sm-4 col-sm-offset-2">
-            <button  ng-click="initialRegistrationController.goToName()" type="submit" class="btn btn-primary btn-large">
-                Next
-            </button>
-        </div>
-    </div>
-
-    <div class="panel" style="padding-top: 15px; border-top-left-radius : 0px; border-top-right-radius: 0px; background-color: #DDEEFF">
-        <form class="form-horizontal">
-            <!--  CONTACT INFO -->
-            <div class="form-group">
-                <label for="phone" class="col-sm-3 col-sm-offset-1 control-label">Phone #</label>
-                <div class="col-sm-7">
-                    <input class="form-control" type="tel" id="phone" ng-model="person.phone" placeholder="Enter phone (required)">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="street" class="col-sm-3 col-sm-offset-1 control-label">Street</label>
-                <div class="col-sm-7">
-                    <input class="form-control" id="street" ng-model="person.address.street" placeholder="Enter Street">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="city" class="col-sm-3 col-sm-offset-1 control-label">City</label>
-                <div class="col-sm-7">
-                    <input class="form-control" id="city" ng-model="person.address.city" placeholder="Enter City">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="state" class="col-sm-3 col-sm-offset-1 control-label">State</label>
-                <div class="col-sm-2">
-                    <input class="form-control" id="state" ng-model="person.address.state" placeholder="Enter State">
-                </div>
-                <label for="zip" class="col-sm-2 control-label">Zip Code</label>
-                <div class="col-sm-3">
-                    <input class="form-control" id="zip" ng-model="person.address.zipCode" placeholder="Enter Zip Code">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="helpneeded" class="col-sm-3 col-sm-offset-1 control-label">Help Needed:</label>
-                <div id="helpneeded" class="container col-sm-7">
-                    <div class="radio">
-                        <label><input type="radio" ng-model="radValue" value="Housing Help" name="optradio">Housing</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" ng-model="radValue" value="Medical Help" name="optradio">Medical</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" ng-model="radValue" value="Mental Help" name="optradio">Mental</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" ng-model="radValue" value="" name="optradio">Other:</label>
-                        <input class="form-control" id="other" ng-model="otherVal" placeholder="Enter help" style="margin-top: 5px;">
-                    </div>
-                </div>
-            </div>
-        </form>
     </div>
 </div>

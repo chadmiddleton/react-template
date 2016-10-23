@@ -101,7 +101,10 @@ angular.module('app').controller('InitialRegistrationController',
 
     this.register = function(person) {
         NeedRegistrationService.person = person;
-        $scope.person = NeedRegistrationService.addUser(person);
+        NeedRegistrationService.addUser(person).then(function(result) {
+            $scope.person = result.data;
+            console.log($scope.person);
+        });
         console.log(NeedRegistrationService.person);
     };
 

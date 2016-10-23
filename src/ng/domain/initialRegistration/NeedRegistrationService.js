@@ -14,6 +14,9 @@ angular.module('app').service('NeedRegistrationService', ['$http', function($htt
         if (person.race === undefined || person.race === "") { person.race = "Data_Not_Collected"}
         if (person.gender === undefined || person.gender === "") { person.gender = "Data_Not_Collected"}
 
+        person.dateUpdated = undefined;
+        person.dateCreated = undefined;
+
         return $http.put(url, person).then(function(result) {
             svc.person = result;
             return result;
