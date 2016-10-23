@@ -41,6 +41,15 @@ angular.module('app').config(['$routeProvider', 'baseRoute', function config($ro
                 return ClientService.getClients();
             }
         }
+    }).when('/help/inNeedProfile/:id', {
+        templateUrl: baseRoute + "inNeedProfile/inNeedProfileTemplate.html",
+        controller: 'inNeedProfileController',
+        controllerAs: 'inNeedProfileController',
+        resolve: {
+            profile: function(inNeedProfileService, $route){
+                return inNeedProfileService.getProfile($route.current.params.id);
+            }
+        }
     }).otherwise('/home');
 }
 ]);

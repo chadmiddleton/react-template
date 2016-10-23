@@ -22,4 +22,8 @@ angular.module('app').controller('clientListController',
         NeedRegistrationService.person.phone = person.phoneNumbers[0];
         $location.path('/help/register/');
     }
+
+    this.viewClient = function(person) {
+        $location.path('help/inNeedProfile/' + person.id);
+    }
 }]);
