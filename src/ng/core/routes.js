@@ -22,7 +22,12 @@ angular.module('app').config(['$routeProvider', 'baseRoute', function config($ro
     }).when('/provider/list', {
         templateUrl: baseRoute + "providerList/providerListTemplate.html",
         controller: 'providerListController',
-        controllerAs: 'providerListController'
+        controllerAs: 'providerListController',
+        resolve: {
+            providerList: function(providerService){
+                return providerService.getProviders();
+            }
+        }
     }).when('/help/list', {
         templateUrl: baseRoute + "clientList/clientListTemplate.html",
         controller: 'clientListController',

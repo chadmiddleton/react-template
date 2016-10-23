@@ -27,9 +27,9 @@ angular.module('app').controller('company-register-controller',
         $scope.provider.admissionContactEmail = "";
 
         $scope.provider.hoursOfOperation = "";
-        $scope.provider.bedNumber = "";
-        $scope.provider.unitNumber = "";
-        $scope.provider.peopleServed = "";
+        $scope.provider.bedNumber = 0;
+        $scope.provider.unitNumber = 0;
+        $scope.provider.peopleServed = 0;
 
         $scope.provider.popServed = {
             "Male": false,
