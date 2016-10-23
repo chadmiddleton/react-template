@@ -1,22 +1,10 @@
 angular.module('app').controller('HomeController',
-                                ['$route', '$scope',
-                                function($route, $scope) {
-    // $('#userdiv').hide();
-    // $('#react').hide();
+                                ['$route', '$scope', '$location', 'NeedRegistrationService',
+                                function($route, $scope, $location, NeedRegistrationService)
+{
+    this.goRegister = function() {
+        NeedRegistrationService.person = {};
+        $location.path('/help/register/')
+    };
 
-    // UpdateService.last = '/home';
-
-    // this.username = '';
-
-    // if (UserService.user != null && UserService.user != undefined && UserService.user != "") {
-    //     $('#userdiv').show();
-    //     $('#anonymous').hide();
-    //     this.username = UserService.user.username;
-    // }
-    //
-    // this.signOut = function() {
-    //     UserService.user = null;
-    //     swal("Success!", "You have successfully signed out.", "success");
-    //     $route.reload();
-    // }
 }]);

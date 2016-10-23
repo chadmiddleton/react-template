@@ -14,7 +14,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="person in clientList">
+            <tr ng-repeat="person in clientList" ng-click="clientListController.updateClient(person)" style="cursor: pointer;">
                 <th scope="row">{{person.num}}</th>
                 <td>{{person.firstname}} {{person.lastname}}</td>
                 <td>{{person.phoneNumbers[0]}}</td>

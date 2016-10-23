@@ -1,6 +1,6 @@
 angular.module('app').controller('clientListController',
-    ['$route', '$scope', '$location', 'clientList',
-        function($route, $scope, $location, clientList)
+    ['$route', '$scope', '$location', 'clientList', 'NeedRegistrationService',
+        function($route, $scope, $location, clientList, NeedRegistrationService)
 {
     $scope.clientList = clientList.data;
 
@@ -11,5 +11,11 @@ angular.module('app').controller('clientListController',
         if ($scope.clientList[i].dateUpdated/1000 > 1) {
             $scope.clientList[i].dateUpdated = d.toDateString();
         }
+    }
+
+    this.updateClient = function(person) {
+        NeedRegistrationService.person = person;
+        NeedRegistrationService.person.phone = person.phoneNumbers[0];
+        $location.path('/help/register/');
     }
 }]);
