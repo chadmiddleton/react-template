@@ -4,5 +4,9 @@ angular.module('app').controller('inNeedProfileController',
 
             $scope.profile = profile.data;
 
+            this.returnHome = function() {
+                $location.path('/home')
+            };
+
             console.log($scope.profile);
 }]);
