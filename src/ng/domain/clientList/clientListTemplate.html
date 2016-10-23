@@ -23,8 +23,8 @@
                 <td>{{person.phoneNumbers[0]}}</td>
                 <td>{{person.message}}</td>
                 <td>{{person.dateUpdated}}</td>
-                <td><button ng-click="clientListController.updateClient(person)">Edit</button></td>
-                <td><button ng-click="clientListController.viewClient(person)" style="cursor: pointer;">View</button></td>
+                <td><button class="btn btn-sm btn-warning" ng-click="clientListController.updateClient(person)">Edit</button></td>
+                <td><button class="btn btn-sm btn-info" ng-click="clientListController.viewClient(person)" style="cursor: pointer;">View</button></td>
             </tr>
         </table>
     </div>
