@@ -1,9 +1,34 @@
-<div>
-    <div class="jumbotron" style="padding-left: 4vw;">
-        <h2>Register for Help</h2>
+<div class="container-fluid">
+    <div class="container page-header">
+        <div class="col-sm-8">
+            <h2>Register for Help</h2>
+        </div>
+        <div class="col-sm-4">
+            <button  ng-click="initialRegistrationController.register(person)" type="submit" class="btn btn-primary btn-large" style="margin-top: 20px;">
+                Register
+            </button>
+        </div>
     </div>
 
-    <div>
+    <div class="jumbotron container" style="padding-top: 10px; padding-bottom: 10px; width: 100%; margin-top: 0px; margin-bottom: 0px; background-color: #FFFFFF;
+                                            border-bottom-left-radius : 0px; border-bottom-right-radius: 0px;">
+        <div class="col-sm-4">
+            <button type="submit" class="btn" ng-click="initialRegistrationController.returnHome()" style="color: #FFF;">
+                Home
+            </button>
+        </div>
+
+        <div class="col-sm-4 col-sm-offset-2">
+            <button  ng-click="initialRegistrationController.goPrev()" type="submit" class="btn btn-primary btn-large">
+                Prev
+            </button>
+            <button  ng-click="initialRegistrationController.goToPersonal()" type="submit" class="btn btn-primary btn-large">
+                Next
+            </button>
+        </div>
+    </div>
+
+    <div class="panel" style="padding-top: 15px; border-top-left-radius : 0px; border-top-right-radius: 0px; background-color: #DDEEFF">
         <form class="form-horizontal">
             <div class="form-group">
                 <label for="firstname" class="col-sm-3 col-sm-offset-1 control-label">First Name</label>
@@ -26,23 +51,6 @@
                 </div>
             </div>
         </form>
-    </div>
-
-    <div class="col-sm-4">
-        <button type="submit" class="btn" ng-click="initialRegistrationController.returnHome()" style="color: #FFF;">
-            Home
-        </button>
-    </div>
-
-    <div class="col-sm-2">
-        <button  ng-click="initialRegistrationController.goPrev()" type="submit" class="btn btn-primary btn-large">
-            Prev
-        </button>
-    </div>
-    <div class="col-sm-2">
-        <button  ng-click="initialRegistrationController.goToPersonal()" type="submit" class="btn btn-primary btn-large">
-            Next
-        </button>
     </div>
 
     <div class="col-sm-4">
