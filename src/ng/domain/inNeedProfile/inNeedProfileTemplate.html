@@ -7,7 +7,12 @@
 
         <div class="span8">
             <h1>{{profile.firstname}} {{profile.lastname}}</h1>
-            <h1>{{profile.address.city}}</h1>
+            <h1>{{profile.address.city}}, {{profile.address.state}}</h1>
+            <h1>{{profile.helpNeededDescription}}</h1>
+            <h3 ng-hide="profile.payPalId == null">Paypal ID: {{profile.payPalId}}</h3>
+            <h3 ng-hide="profile.bitcoinAddress == null">Bitcoin Address: {{profile.bitcoinAddress}}</h3>
+            <h3 ng-hide="profile.goalDollarAmount == null">Goal Dollar Amount: {{profile.goalDollarAmount}}</h3>
+            <h3 ng-hide="profile.raisedDollarAmount == null">Raised So Far Amount: {{profile.raisedDollarAmount}}</h3>
         </div>
 
 
