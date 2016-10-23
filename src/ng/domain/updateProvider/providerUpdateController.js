@@ -3,6 +3,10 @@ angular.module('app').controller('providerUpdateController',
                                 function($route, $scope, $location, providerService)
 {
     $scope.provider = providerService.provider;
+    console.log($scope.provider)
+    if ($scope.provider.available === null || $scope.provider.available === undefined) {
+        $location.path('/home/')
+    }
     $scope.data = {};
     $scope.data.available = $scope.provider.available[1].amount;
     $scope.data.inUse = $scope.provider.inUse[1].amount;
@@ -43,5 +47,9 @@ angular.module('app').controller('providerUpdateController',
             providerService.provider = result.data;
             console.log(result.data);
         })
+    }
+
+    this.goBack = function() {
+        $location.path('provider/list/')
     }
 }]);

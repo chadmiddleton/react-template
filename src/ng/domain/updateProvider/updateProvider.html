@@ -1,6 +1,7 @@
 <div class="container-fluid">
     <div class="page-header">
         <h1>Edit {{provider.name}}</h1>
+        <h3>Phone Number: {{provider.phone}}</h3>
     </div>
     <div class="panel">
         <div class="panel-body">
@@ -27,6 +28,11 @@
         <div class="col-sm-4">
             <button  ng-click="providerUpdateController.update(provider)" type="submit" class="btn btn-primary btn-large" style="margin-top: 20px;">
                 Update!
+            </button>
+        </div>
+        <div class="col-sm-4 col-sm-offset-4">
+            <button  ng-click="providerUpdateController.goBack()" type="submit" class="btn btn-primary btn-large" style="margin-top: 20px;">
+                Back
             </button>
         </div>
     </div>
