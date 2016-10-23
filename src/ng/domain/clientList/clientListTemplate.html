@@ -2,23 +2,25 @@
     <div class="page-header">
         <h1>List of those in Need</h1>
     </div>
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>First/Last Name</th>
-            <th>Phone #</th>
-            <th>Message</th>
-            <th>Date</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark Otto</td>
-            <td>444-555-6666</td>
-            <td>Medical Help</td>
-            <td>(date up)</td>
-        </tr>
-    </table>
+    <div class="panel">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>First/Last Name</th>
+                <th>Phone #</th>
+                <th>Message</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="person in clientList">
+                <th scope="row">1</th>
+                <td>{{person.firstname}} {{person.lastname}}</td>
+                <td>{{person.phoneNumbers[0]}}</td>
+                <td>{{person.message}}</td>
+                <td>{{person.dateUpdated}}</td>
+            </tr>
+        </table>
+    </div>
 </div>
