@@ -2,7 +2,9 @@
     <div class="page-header">
         <h1>New CoC Member
             <div class="pull-right">
-                <button class="btn btn-primary" type="submit" ng-click="companyRegisterController.register(provider)">Submit</button>
+                <button class="btn btn-primary" type="submit" ng-click="companyRegisterController.register(provider)">
+                    Submit
+                </button>
             </div>
         </h1>
     </div>
@@ -16,33 +18,40 @@
                     <div class="row">
                         <div class="col-xs-1 col-sm-3">
                             <label for="agencyName">Name:</label>
-                            <input id="agencyName" type="text" ng-model="provider.agencyName" class="form-control" placeholder="Name"/>
+                            <input id="agencyName" type="text" ng-model="provider.agencyName" class="form-control"
+                                   placeholder="Name"/>
                         </div>
                         <div class="col-xs-1 col-sm-3">
                             <label for="agencyPhone">Phone #:</label>
-                            <input id="agencyPhone" type="text" ng-model="provider.agencyPhone" class="form-control" placeholder="Phone #"/>
+                            <input id="agencyPhone" type="text" ng-model="provider.agencyPhone" class="form-control"
+                                   placeholder="Phone #"/>
                         </div>
                         <div class="col-xs-1 col-sm-6">
                             <label for="agencyStreet">Address:</label>
-                            <input id="agencyStreet" type="text" ng-model="provider.agencyStreet" class="form-control" placeholder="Street address"/>
+                            <input id="agencyStreet" type="text" ng-model="provider.agencyStreet" class="form-control"
+                                   placeholder="Street address"/>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-1 col-sm-2">
                             <label for="agencyCity">City:</label>
-                            <input id="agencyCity" type="text" ng-model="provider.agencyCity" class="form-control" placeholder="City">
+                            <input id="agencyCity" type="text" ng-model="provider.agencyCity" class="form-control"
+                                   placeholder="City">
                         </div>
                         <div class="col-xs-1 col-sm-2">
                             <label for="agencyState">State:</label>
-                            <input id="agencyState" type="text" ng-model="provider.agencyState" class="form-control" placeholder="State">
+                            <input id="agencyState" type="text" ng-model="provider.agencyState" class="form-control"
+                                   placeholder="State">
                         </div>
                         <div class="col-xs-1 col-sm-2">
                             <label for="agencyZip">Zipcode:</label>
-                            <input id="agencyZip" type="text" ng-model="provider.agencyZip" class="form-control" placeholder="Zipcode">
+                            <input id="agencyZip" type="text" ng-model="provider.agencyZip" class="form-control"
+                                   placeholder="Zipcode">
                         </div>
                         <div class="col-xs-1 col-sm-6">
                             <label for="agencyWebSite">Web Address:</label>
-                            <input id="agencyWebsite" type="text" ng-model="provider.agencyWebsite" class="form-control" placeholder="Website"/>
+                            <input id="agencyWebsite" type="text" ng-model="provider.agencyWebsite" class="form-control"
+                                   placeholder="Website"/>
                         </div>
                     </div>
                     <div class="row">
@@ -66,15 +75,18 @@
                     <div class="row">
                         <div class="col-xs-1 col-sm-4">
                             <label for="agencyExecName">Executive Dir. Name</label>
-                            <input id="agencyExecName" type="text" ng-model="provider.agencyExecName" class="form-control" placeholder="Name">
+                            <input id="agencyExecName" type="text" ng-model="provider.agencyExecName"
+                                   class="form-control" placeholder="Name">
                         </div>
                         <div class="col-xs-1 col-sm-4">
                             <label for="agencyExecNumber">Executive Dir. Number</label>
-                            <input id="agencyExecNumber" type="text" ng-model="provider.agencyExecNumber" class="form-control" placeholder="Phone number">
+                            <input id="agencyExecNumber" type="text" ng-model="provider.agencyExecNumber"
+                                   class="form-control" placeholder="Phone number">
                         </div>
                         <div class="col-xs-1 col-sm-4">
                             <label for="agencyExecEmail">Executive Dir. Email</label>
-                            <input id="agencyExecEmail" type="text" ng-model="provider.agencyExecEmail" class="form-control" placeholder="E-mail address">
+                            <input id="agencyExecEmail" type="text" ng-model="provider.agencyExecEmail"
+                                   class="form-control" placeholder="E-mail address">
                         </div>
                     </div>
                     <div class="row">
@@ -86,75 +98,93 @@
                             <label><input type="checkbox" ng-model="provider.popServed['Female']" ng-true-value="true">Female</label>
                         </div>
                         <div class="col-xs-3 checkbox">
-                            <label><input type="checkbox" ng-model="provider.popServed['Adolescents']" ng-true-value="true">Adolescents</label>
+                            <label><input type="checkbox" ng-model="provider.popServed['Adolescents']"
+                                          ng-true-value="true">Adolescents</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-3 checkbox">
-                            <label><input type="checkbox" ng-model="provider.popServed['Families']" ng-true-value="true">Families</label>
+                            <label><input type="checkbox" ng-model="provider.popServed['Families']"
+                                          ng-true-value="true">Families</label>
                         </div>
                         <div class="col-xs-3 checkbox">
-                            <label><input type="checkbox" ng-model="provider.popServed['Women_Children']" ng-true-value="true">Women w/ Children</label>
+                            <label><input type="checkbox" ng-model="provider.popServed['Women_Children']"
+                                          ng-true-value="true">Women w/ Children</label>
                         </div>
                         <div class="col-xs-3 checkbox">
-                            <label><input type="checkbox" ng-model="provider.popServed['Veterans']" ng-true-value="true">Veterans</label>
+                            <label><input type="checkbox" ng-model="provider.popServed['Veterans']"
+                                          ng-true-value="true">Veterans</label>
                         </div>
                         <div class="col-xs-3 checkbox">
-                            <label><input type="checkbox" ng-model="provider.popServed['Dually_Diagnosed']" ng-true-value="true">Dually Diagnosed</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-3 checkbox">
-                            <label><input type="checkbox" ng-model="provider.popServed['Domestic_Violence']" ng-true-value="true">Domestic Violence</label>
-                        </div>
-                        <div class="col-xs-3 checkbox">
-                            <label><input type="checkbox" ng-model="provider.popServed['Pregnant_Women']" ng-true-value="true">Pregnant Women</label>
-                        </div>
-                        <div class="col-xs-3 checkbox">
-                            <label><input type="checkbox" ng-model="provider.popServed['HIV_AIDS']" ng-true-value="true">HIV/AIDS</label>
-                        </div>
-                        <div class="col-xs-3 checkbox">
-                            <label><input type="checkbox" ng-model="provider.popServed['Homeless']" ng-true-value="true">Homeless</label>
+                            <label><input type="checkbox" ng-model="provider.popServed['Dually_Diagnosed']"
+                                          ng-true-value="true">Dually Diagnosed</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-3 checkbox">
-                            <label><input type="checkbox" ng-model="provider.popServed['Substance_Abuse']" ng-true-value="true">Substance Abuse</label>
+                            <label><input type="checkbox" ng-model="provider.popServed['Domestic_Violence']"
+                                          ng-true-value="true">Domestic Violence</label>
                         </div>
                         <div class="col-xs-3 checkbox">
-                            <label><input type="checkbox" ng-model="provider.popServed['Mental_Illness']" ng-true-value="true">Mental Illness</label>
+                            <label><input type="checkbox" ng-model="provider.popServed['Pregnant_Women']"
+                                          ng-true-value="true">Pregnant Women</label>
                         </div>
                         <div class="col-xs-3 checkbox">
-                            <label><input type="checkbox" ng-model="provider.popServed['Developmentally_Delayed']" ng-true-value="true">Developmentally Delayed</label>
+                            <label><input type="checkbox" ng-model="provider.popServed['HIV_AIDS']"
+                                          ng-true-value="true">HIV/AIDS</label>
                         </div>
                         <div class="col-xs-3 checkbox">
-                            <label><input type="checkbox" ng-model="provider.popServed['Disabled']" ng-true-value="true">Disabled</label>
+                            <label><input type="checkbox" ng-model="provider.popServed['Homeless']"
+                                          ng-true-value="true">Homeless</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3 checkbox">
+                            <label><input type="checkbox" ng-model="provider.popServed['Substance_Abuse']"
+                                          ng-true-value="true">Substance Abuse</label>
+                        </div>
+                        <div class="col-xs-3 checkbox">
+                            <label><input type="checkbox" ng-model="provider.popServed['Mental_Illness']"
+                                          ng-true-value="true">Mental Illness</label>
+                        </div>
+                        <div class="col-xs-3 checkbox">
+                            <label><input type="checkbox" ng-model="provider.popServed['Developmentally_Delayed']"
+                                          ng-true-value="true">Developmentally Delayed</label>
+                        </div>
+                        <div class="col-xs-3 checkbox">
+                            <label><input type="checkbox" ng-model="provider.popServed['Disabled']"
+                                          ng-true-value="true">Disabled</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
                             <label for="eligibilityCriteria">Admission/Eligibility Criteria:</label>
-                            <input id="eligibilityCriteria" type="text" ng-model="provider.eligibilityCriteria" class="form-control" placeholder="Admission/Eligibility Criteria...">
+                            <input id="eligibilityCriteria" type="text" ng-model="provider.eligibilityCriteria"
+                                   class="form-control" placeholder="Admission/Eligibility Criteria...">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-4">
                             <label for="admissionContactName">Admission Contact Person:</label>
-                            <input id="admissionContactName" type="text" ng-model="provider.admissionContactName" class="form-control" placeholder="Admission contact name...">
+                            <input id="admissionContactName" type="text" ng-model="provider.admissionContactName"
+                                   class="form-control" placeholder="Admission contact name...">
                         </div>
                         <div class="col-xs-4">
                             <label for="admissionContactNumber">Admission Contact Number:</label>
-                            <input id="admissionContactNumber" type="text" ng-model="provider.admissionContactNumber" class="form-control" placeholder="Admission contact number">
+                            <input id="admissionContactNumber" type="text" ng-model="provider.admissionContactNumber"
+                                   class="form-control" placeholder="Admission contact number">
                         </div>
                         <div class="col-xs-4">
                             <label for="admissionContactEmail">Admission Contact Email:</label>
-                            <input id="admissionContactEmail" type="text" ng-model="provider.admissionContactEmail" class="form-control" placeholder="Admission contact email">
+                            <input id="admissionContactEmail" type="text" ng-model="provider.admissionContactEmail"
+                                   class="form-control" placeholder="Admission contact email">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-3">
-                            <label for="hoursOfOperation">Hours/Days of Operation:</label>
-                            <input id="hoursOfOperation" type="text" ng-model="provider.hoursOfOperation" class="form-control" placeholder="Hours/Days of operation">
+                            <label for="hoursOfOperation">Hours of Operation:</label>
+                            <input id="hoursOfOperation" type="text" ng-model="provider.hoursOfOperation"
+                                   class="form-control" placeholder="Hours/Days of operation">
                         </div>
                         <div class="col-xs-3">
                             <label for="bedNumber">Number of Beds:</label>
@@ -165,12 +195,20 @@
                             <input id="unitNumber" type="text" ng-model="provider.unitNumber" class="form-control">
                         </div>
                         <div class="col-xs-3">
-                            <label for="peopleServed">Number of people served:</label>
+                            <label for="peopleServed">People served:</label>
                             <input id="peopleServed" type="text" ng-model="provider.peopleServed" class="form-control">
                         </div>
                     </div>
                 </div>
             </form>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn" ng-click="companyRegisterController.returnHome()"
+                            style="color: #FFF;">
+                        Home
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

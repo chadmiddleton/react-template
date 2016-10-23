@@ -4,6 +4,10 @@ angular.module('app').controller('clientListController',
 {
     $scope.clientList = clientList.data;
 
+    this.returnHome = function() {
+        $location.path('/home')
+    };
+
     for (var i = 0; i < $scope.clientList.length; i++) {
         $scope.clientList[i].num = i + 1;
         var d = new Date(0);

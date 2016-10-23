@@ -6,7 +6,11 @@ angular.module('app').controller('providerListController',
         $scope.queryOptions = [
             "beds",
             "units"
-        ]
+        ];
+
+        this.returnHome = function() {
+                $location.path('/home')
+        };
         
         $scope.getProviderBy = function(service){
                 providerService.getProvidersByService(service).then(function(result) {
