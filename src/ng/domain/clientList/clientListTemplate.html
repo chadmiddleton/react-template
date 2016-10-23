@@ -15,7 +15,7 @@
             </thead>
             <tbody>
             <tr ng-repeat="person in clientList">
-                <th scope="row">1</th>
+                <th scope="row">{{person.num}}</th>
                 <td>{{person.firstname}} {{person.lastname}}</td>
                 <td>{{person.phoneNumbers[0]}}</td>
                 <td>{{person.message}}</td>
