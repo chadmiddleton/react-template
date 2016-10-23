@@ -14,13 +14,21 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="person in clientList">
-                <th scope="row">1</th>
+            <tr ng-repeat="person in clientList" ng-click="clientListController.updateClient(person)" style="cursor: pointer;">
+                <th scope="row">{{person.num}}</th>
                 <td>{{person.firstname}} {{person.lastname}}</td>
                 <td>{{person.phoneNumbers[0]}}</td>
                 <td>{{person.message}}</td>
                 <td>{{person.dateUpdated}}</td>
             </tr>
         </table>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button type="submit" class="btn" ng-click="clientListController.returnHome()"
+                    style="color: #FFF;">
+                Home
+            </button>
+        </div>
     </div>
 </div>

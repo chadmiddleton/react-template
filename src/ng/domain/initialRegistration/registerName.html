@@ -1,54 +1,55 @@
-<div>
-    <div class="jumbotron" style="padding-left: 4vw;">
-        <h2>Register for Help</h2>
+<div class="container-fluid">
+    <div class="page-header">
+        <h1>Register for Help
+            <div class="pull-right">
+                <button ng-click="initialRegistrationController.register(person)" type="submit"
+                        class="btn btn-primary btn-lg">
+                    Register
+                </button>
+            </div>
+        </h1>
     </div>
+    <div class="panel">
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="firstname" class="col-sm-3 col-sm-offset-1 control-label">First Name</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" id="firstname" ng-model="person.firstname"
+                               placeholder="Enter first name">
+                    </div>
+                </div>
 
-    <div>
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label for="firstname" class="col-sm-3 col-sm-offset-1 control-label">First Name</label>
-                <div class="col-sm-7">
-                    <input class="form-control" id="firstname" ng-model="person.firstname" placeholder="Enter first name">
+                <div class="form-group">
+                    <label for="midname" class="col-sm-3 col-sm-offset-1 control-label">Middle Name</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" id="midname" ng-model="person.midname"
+                               placeholder="Enter middle name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname" class="col-sm-3 col-sm-offset-1 control-label">Last Name</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" id="lastname" ng-model="person.lastname"
+                               placeholder="Enter last name">
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn" ng-click="initialRegistrationController.returnHome()"
+                            style="color: #FFF;">Home
+                    </button>
+                    <button ng-click="initialRegistrationController.goToPersonal()" type="submit"
+                            class="pull-right btn btn-success btn-large">Next
+                    </button>
+                    <button ng-click="initialRegistrationController.goPrev()" type="submit"
+                            class="pull-right btn btn-info btn-large">
+                        Prev
+                    </button>
                 </div>
             </div>
-
-            <div class="form-group">
-                <label for="midname" class="col-sm-3 col-sm-offset-1 control-label">Middle Name</label>
-                <div class="col-sm-7">
-                    <input class="form-control" id="midname" ng-model="person.midname" placeholder="Enter middle name">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="lastname" class="col-sm-3 col-sm-offset-1 control-label">Last Name</label>
-                <div class="col-sm-7">
-                    <input class="form-control" id="lastname" ng-model="person.lastname" placeholder="Enter last name">
-                </div>
-            </div>
-        </form>
+        </div>
     </div>
-
-    <div class="col-sm-4">
-        <button type="submit" class="btn" ng-click="initialRegistrationController.returnHome()" style="color: #FFF;">
-            Home
-        </button>
-    </div>
-
-    <div class="col-sm-2">
-        <button  ng-click="initialRegistrationController.goPrev()" type="submit" class="btn btn-primary btn-large">
-            Prev
-        </button>
-    </div>
-    <div class="col-sm-2">
-        <button  ng-click="initialRegistrationController.goToPersonal()" type="submit" class="btn btn-primary btn-large">
-            Next
-        </button>
-    </div>
-
-    <div class="col-sm-4">
-        <button  ng-click="initialRegistrationController.register(person)" type="submit" class="btn btn-primary btn-large">
-            Register
-        </button>
-    </div>
-
 </div>

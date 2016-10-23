@@ -3,6 +3,7 @@ angular.module('app').controller('InitialRegistrationController',
                                 function($route, $scope, $location, NeedRegistrationService)
 {
     $scope.person = NeedRegistrationService.person;
+    console.log($scope.person)
 
     switch ($scope.person.message) {
         case "Housing Help":
@@ -21,10 +22,6 @@ angular.module('app').controller('InitialRegistrationController',
             $scope.otherVal = $scope.person.message;
             $scope.radValue = 0;
     }
-
-    $scope.currentRace = "Prefer not to specify";
-    $scope.currentEthnicity = "Prefer not to specify";
-    $scope.currentGender = "Prefer not to specify";
 
     $scope.possibleEthOptions = [
         "Non-Hispanic/Non-Latino",
@@ -65,6 +62,38 @@ angular.module('app').controller('InitialRegistrationController',
         "Dont' know": "Client_Does_Not_Know",
         "Prefer not to specify": "Client_Refused",
     };
+
+    var reversemap = {
+        "Non_Hispanic_Non_Latino": "Non-Hispanic/Non-Latino",
+        "Hispanic_Latino": "Hispanic/Latino",
+        "AmIndAKNative": "American Indian/Alaskan Native",
+        "Asian": "Asian",
+        "Black": "Black or African American",
+        "NativeHIOtherPacific": "Native Hawaiian or Other Pacific Islander",
+        "White": "White",
+        "Female": "Female",
+        "Male": "Male",
+        "Transgender_male_to_female": "Transgender (Male to Female)",
+        "Transgender_female_to_male": "Transgender (Female to Male)",
+        "Client_Does_Not_Know": "Dont' know",
+        "Client_Refused": "Prefer not to specify"
+    };
+
+    if ($scope.person.race === undefined || $scope.person.race === "" || $scope.person.race === null) {
+        $scope.currentRace = "Prefer not to specify";
+    } else {
+        $scope.currentRace = reversemap[$scope.person.race];
+    }
+    if ($scope.person.ethnicity === undefined || $scope.person.ethnicity === "" || $scope.person.ethnicity === null) {
+        $scope.currentEthnicity = "Prefer not to specify";
+    } else {
+        $scope.currentEthnicity = reversemap[$scope.person.ethnicity];
+    }
+    if ($scope.person.gender === undefined || $scope.person.gender === "" || $scope.person.gender === null) {
+        $scope.currentGender = "Prefer not to specify";
+    } else {
+        $scope.currentGender = reversemap[$scope.person.gender];
+    }
 
     this.returnHome = function() {
         $location.path('/home')

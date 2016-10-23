@@ -19,10 +19,19 @@ angular.module('app').config(['$routeProvider', 'baseRoute', function config($ro
         templateUrl: baseRoute + "company-register/company-template.html",
         controller: 'company-register-controller',
         controllerAs: 'companyRegisterController'
+    }).when('/provider/update', {
+        templateUrl: baseRoute + "updateProvider/updateProvider.html",
+        controller: 'providerUpdateController',
+        controllerAs: 'providerUpdateController'
     }).when('/provider/list', {
         templateUrl: baseRoute + "providerList/providerListTemplate.html",
         controller: 'providerListController',
-        controllerAs: 'providerListController'
+        controllerAs: 'providerListController',
+        resolve: {
+            providerList: function(providerService){
+                return providerService.getProviders();
+            }
+        }
     }).when('/help/list', {
         templateUrl: baseRoute + "clientList/clientListTemplate.html",
         controller: 'clientListController',
