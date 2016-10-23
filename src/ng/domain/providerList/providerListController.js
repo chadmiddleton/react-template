@@ -3,6 +3,10 @@ angular.module('app').controller('providerListController',
         function($route, $scope, $location, providerList, providerService)
 {
         $scope.providerList = providerList.data;
+
+        this.returnHome = function() {
+                $location.path('/home')
+        };
         
         $scope.getProviderBy = function(service){
                 providerService.getProvidersByService(service).then(function(result) {

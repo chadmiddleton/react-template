@@ -1,10 +1,12 @@
 angular.module('app').controller('company-register-controller',
-    ['$route', '$scope', '$http', function ($route, $scope, $http) {
+    ['$route', '$scope', '$location', '$http', function ($route, $scope, $location, $http) {
         
         $scope.provider = {};
-        // setInterval(function () {
-        //     console.log($scope.provider)
-        // }, 5000);
+
+        this.returnHome = function() {
+            $location.path('/home')
+        };
+
         $scope.provider.agencyName = "";
         $scope.provider.agencyStreet = "";
         $scope.provider.agencyCity = "";
